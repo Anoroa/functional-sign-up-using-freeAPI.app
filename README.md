@@ -14,3 +14,5 @@ Currently, two official plugins are available:
 2. React-router
 
 3. React-Toastify
+
+4. React-icons
