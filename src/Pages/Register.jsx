@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import { Link, useNavigate } from "react-router";
 import { Bounce, toast } from "react-toastify";
 
 const Register = () => {
+  const navigate = useNavigate()
   // State------------
   const [showPass, setshowPass] = useState(false);
   const [Loading, setLoading] = useState(false);
@@ -50,6 +52,7 @@ const Register = () => {
         )
         .then((res) => {
           setLoading(false);
+          navigate('/')
           toast.success("Successfully signed up!", {
             position: "bottom-right",
             autoClose: 2000,
@@ -173,6 +176,7 @@ const Register = () => {
             "Sign Up"
           )}
         </button>
+        <p className="mt-4 text-lg font-semibold text-slate-300">Already have an account? <Link className="text-lg font-semibold text-blue-400" to="/login">Login</Link></p>
       </div>
     </div>
   );
